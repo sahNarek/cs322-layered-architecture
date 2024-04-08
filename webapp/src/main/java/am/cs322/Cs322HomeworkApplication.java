@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "am.cs322")
+@Import(ServiceOrientedApplication.class)
 public class Cs322HomeworkApplication {
 
     public static void main(String[] args) {
