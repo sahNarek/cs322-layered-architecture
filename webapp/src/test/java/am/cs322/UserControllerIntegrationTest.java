@@ -30,6 +30,7 @@ public class UserControllerIntegrationTest {
     public void createUserTest() throws Exception {
         CreateUserRequest request = new CreateUserRequest("John", "Doe");
         UserDTO userDTO = new UserDTO("John Doe");
+        System.out.println("Hello, world!");
 
         when(userService.createUser(request.firstName(), request.lastName())).thenReturn(userDTO);
 

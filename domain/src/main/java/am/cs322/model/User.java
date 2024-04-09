@@ -1,8 +1,11 @@
 package am.cs322.model;
+import banking.model.Account;
 
+import java.util.List;
 import jakarta.persistence.*;
 
 import java.util.Objects;
+
 
 @Entity
 @Table(name = "\"user\"")
@@ -10,9 +13,14 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "\"user_id\"")
     private Long id;
     private String firstName;
     private String lastName;
+
+
+    @OneToMany(mappedBy = "user")
+    private List<Account> accounts;
 
     public User() {
 
@@ -43,4 +51,7 @@ public class User {
     public String getLastName() {
         return lastName;
     }
+
+    public Long getId() {return id;}
+
 }
